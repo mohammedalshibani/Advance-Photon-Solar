@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أدفانس فوتون سولار - حلول الطاقة الشمسية</title>
+    <link rel="icon" type="image/jpg" href="logo.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* الأساسيات */
+        :root {
+            --primary: #FF9800;
+            --secondary: #2196F3;
+            --dark: #333;
+            --light: #f8f8f8;
+            --gray: #777;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        h1, h2, h3, h4 {
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: #e68900;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--primary);
+            margin: 15px auto;
+            border-radius: 2px;
+        }
+        
+        /* الشريط العلوي - تم التحديث */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo-img {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .logo-img img {
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            filter: drop-shadow(0 0 2px rgba(196, 157, 32, 0.97))
+        }
+        
+        .logo h1 {
+            margin: 0;
+            font-size: 24px;
+            color: var(--primary);
+            font-weight: 700;
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 25px;
+            position: relative;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            transition: color 0.3s;
+            padding: 10px 5px;
+            position: relative;
+        }
+        
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            background: var(--primary);
+            bottom: 0;
+            right: 0;
+            transition: width 0.3s ease;
+            border-radius: 3px;
+        }
+        
+        .nav-links a:hover:after,
+        .nav-links a.active:after {
+            width: 100%;
+        }
+        
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary);
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            background: var(--primary);
+            color: white;
+            padding: 8px 10px;
+            border-radius: 5px;
+        }
+        
+        /* الهيرو */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.1)), url('main.jfif') no-repeat center center/cover;
+            height: 100vh;
+            color: white;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin-top: 80px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero-content h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #e68900;
+        }
+        
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        
+        /* من نحن */
+        .about {
+            background-color: white;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+            padding: 20px;
+        }
+        
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            padding: 20px;
+        }
+        
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* لماذا الطاقة الشمسية */
+        .why-solar {
+            background-color: #f1f8ff;
+        }
+        
+        .benefits {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+        
+        .benefit-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            width: 100%;
+            max-width: 350px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            flex: 1 1 calc(50% - 30px);
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .benefit-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        /* الخدمات */
+        .services-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            width: 100%;
+            max-width: 350px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            flex: 1 1 calc(50% - 30px);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-content {
+            padding: 25px;
+        }
+        
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        /* التواصل */
+        .contact {
+            background-color: #f1f8ff;
+        }
+        
+        .contact-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+        
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        .poll-options {
+            margin: 15px 0;
+        }
+        
+        .poll-option {
+            margin-bottom: 10px;
+        }
+        
+        /* الفوتر */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 50px 0 20px;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .footer-section h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .social-icons a {
+            display: inline-block;
+            margin: 0 10px;
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        
+        .social-icons a:hover {
+            color: var(--primary);
+        }
+        
+        .copyright {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #555;
+        }
+        
+        /* التكيف مع الشاشات الصغيرة */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: white;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.5s ease;
+                gap: 20px;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 0;
+            }
+            
+            .nav-links a:after {
+                display: none;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .hero-content h2 {
+                font-size: 2rem;
+            }
+            
+            .about-content, .contact-content {
+                flex-direction: column;
+            }
+            
+            .logo h1 {
+                font-size: 20px;
+            }
+            
+            /* تحديثات لعرض مربعين في كل صف على الجوال */
+            .benefit-card, .service-card {
+                flex: 1 1 calc(50% - 15px);
+                max-width: calc(50% - 15px);
+                padding: 20px;
+            }
+            
+            .benefit-icon {
+                font-size: 2.5rem;
+            }
+            
+            .service-icon {
+                font-size: 2rem;
+            }
+        }
+        
+        /* تعديلات إضافية للشاشات الصغيرة جدًا */
+        @media (max-width: 480px) {
+            .benefit-card, .service-card {
+                flex: 1 1 100%;
+                max-width: 100%;
+            }
+            
+            .hero-content h2 {
+                font-size: 1.8rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- الشريط العلوي - تم التحديث -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <div class="logo-img">
+                        <img src="logo.jpg" alt="شعار أدفانس فوتون سولار">
+                    </div>
+                    <h1>أدفانس <span>فوتون سولار</span></h1>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home" class="active">الرئيسية</a></li>
+                    <li><a href="#about">من نحن</a></li>
+                    <li><a href="#why">لماذا الطاقة الشمسية</a></li>
+                    <li><a href="#services">خدماتنا</a></li>
+                    <li><a href="#contact">تواصل معنا</a></li>
+                </ul>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- قسم الهيرو -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h2>حلول متكاملة للطاقة الشمسية</h2>
+                <p>من الدراسة والتصميم إلى التركيب والصيانة، بخبرة هندسية ومواصفات عالية الجودة</p>
+                <a href="https://wa.me/967775536861" class="btn">احصل على استشارة مجانية</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم من نحن -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">من نحن</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>نحن في <strong>أدفانس فوتون سولار</strong> نقدم حلول متكاملة للطاقة الشمسية من الدراسة والتصميم إلى التركيب والصيانة، بخبرة هندسية ومواصفات عالية الجودة.</p>
+                    <p>📍 نخدم الأفراد، الشركات، والمزارع في جميع أنحاء الوطن العربي.</p>
+                    <p>🔋 لأن الشمس لا ترحل... استثمرها.</p>
+                    <a href="#contact" class="btn">تواصل معنا</a>
+                </div>
+                <div class="about-image">
+                    <img src="k.jpg" alt="فريق أدفانس فوتون سولار">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم لماذا الطاقة الشمسية -->
+    <section class="why-solar" id="why">
+        <div class="container">
+            <h2 class="section-title">لماذا تختار الطاقة الشمسية؟</h2>
+            <div class="benefits">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <h3>توفير في التكاليف</h3>
+                    <p>خفض فاتورة الكهرباء بنسبة تصل إلى 80٪</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>طاقة نظيفة</h3>
+                    <p>مصدر طاقة نظيف ومتجدد وصديق للبيئة</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>صيانة منخفضة</h3>
+                    <p>صيانة منخفضة وتوفير طويل الأمد</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>حماية البيئة</h3>
+                    <p>تقليل البصمة الكربونية والمحافظة على البيئة</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم خدماتنا -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">خدماتنا</h2>
+            <div class="services-cards">
+                <div class="service-card">
+                    <div class="service-content">
+                        <div class="service-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3>دراسة وتصميم الأنظمة</h3>
+                        <p>نبدأ كل مشروع بتحليل استهلاكك وتحديد النظام الأنسب بدقة.</p>
+                        <ul>
+                            <li>📊 تقارير فنية – رسومات هندسية</li>
+                            <li>🎯 محاكاة إنتاج الطاقة</li>
+                            <li>🎯 كفاءة عالية وتكلفة مناسبة</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-content">
+                        <div class="service-icon">
+                            <i class="fas fa-solar-panel"></i>
+                        </div>
+                        <h3>تركيب الألواح الشمسية</h3>
+                        <p>فريقنا المدرب يركّب الأنظمة بأعلى معايير الجودة والسلامة.</p>
+                        <ul>
+                            <li>📍 مكوّنات معتمدة عالمياً</li>
+                            <li>🛠️ ضمان الأداء والاستمرارية</li>
+                            <li>✅ أعلى معايير الجودة</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-content">
+                        <div class="service-icon">
+                            <i class="fas fa-toolbox"></i>
+                        </div>
+                        <h3>الصيانة الدورية</h3>
+                        <p>الصيانة الدورية تحافظ على كفاءة النظام بنسبة +95%</p>
+                        <ul>
+                            <li>🧰 عقود صيانة شهرية وسنوية</li>
+                            <li>🔧 أسعار مناسبة</li>
+                            <li>☀️ تنظيف يرفع الإنتاج بنسبة 30٪</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم التواصل -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">تواصل معنا</h2>
+            <div class="contact-content">
+                <div class="contact-form">
+                    <h3>لديك سؤال عن الطاقة الشمسية؟ 💬</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">الاسم</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">البريد الإلكتروني</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">رقم الهاتف</label>
+                            <input type="tel" id="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">رسالتك</label>
+                            <textarea id="message" rows="5" required></textarea>
+                        </div>
+                        
+                        <h3 style="margin-top: 30px;">#استطلاع_رأي</h3>
+                        <p>ما الذي يمنعك من تركيب نظام طاقة شمسية؟</p>
+                        
+                        <div class="poll-options">
+                            <div class="poll-option">
+                                <input type="radio" id="price" name="obstacle" value="السعر">
+                                <label for="price">السعر</label>
+                            </div>
+                            <div class="poll-option">
+                                <input type="radio" id="space" name="obstacle" value="المساحة">
+                                <label for="space">المساحة</label>
+                            </div>
+                            <div class="poll-option">
+                                <input type="radio" id="info" name="obstacle" value="المعلومات غير كافية">
+                                <label for="info">المعلومات غير كافية</label>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="btn">إرسال الرسالة</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- الفوتر -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>أدفانس فوتون سولار</h3>
+                    <p>حلول متكاملة للطاقة الشمسية بخبرة هندسية ومواصفات عالية الجودة</p>
+                </div>
+                <div class="footer-section">
+                    <h3>روابط سريعة</h3>
+                    <p><a href="#home">الرئيسية</a></p>
+                    <p><a href="#about">من نحن</a></p>
+                    <p><a href="#services">خدماتنا</a></p>
+                    <p><a href="#contact">تواصل معنا</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>تابعنا على</h3>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/share/16b8ozYz5s/"><i class="fab fa-facebook"></i></a>
+                        <a href="https://wa.me/967775536861"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.instagram.com%2Fzain_alquhali1%3Figsh%3DczloemxraDF3Ymtr%26fbclid%3DIwZXh0bgNhZW0CMTAAYnJpZBExVlJiR0laQTdPUnhRYjZzawEeFfvP9XZZWItu5_WWbyK3o8FXbz42GYeK3ujG7HIXmlto-7wYVhGU0ap-jfA_aem_M6vG7PXODExK4ufljM60XQ&h=AT0obnTRwnjldh0lOoSG6ii9vvhvYsTkYrjsWE4Fw2KTQ8Ms2yE2TuNDOZboO0ynZDlM9TTWJgG1JZCf19RI1BeowzMG950vtgVtKGS_EEepOxWnXX9XbZSYnlu6cp3Us24szQ"><i class="fab fa-instagram"></i></a>
+                        <a href="https://l.facebook.com/l.php?u=https%3A%2F%2Flinkedin.com%2Fin%2Fzain-alabdeen-al-quhali-49bb27327%253Futm_source%253Dshare%2526utm_campaign%253Dshare_via%2526utm_content%253Dprofile%2526utm_medium%253Dandroid_app%3Ffbclid%3DIwZXh0bgNhZW0CMTAAYnJpZBExVlJiR0laQTdPUnhRYjZzawEeuNbjnqesKyFagppX2QwSOrX36Ius1JMaYGA0JUCWnD6Or7v1Jw_FG7-X56Y_aem_sgCg29NCnVNb-WqkhuG-RQ&h=AT3ExvQYkFw2HXKQGNs9b42H0N1Ab2rOV00I5f_YVAZactrOGY3mh_I9UWD3fSTHXUMYnn5GuH0FL-0z_acWXADs9R1AB9169XKsZEKRQkcC58IYca6dovUHUV5-SWrEWdTc"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>جميع الحقوق محفوظة &copy; أدفانس فوتون سولار 2025</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // القائمة المتحركة للشاشات الصغيرة
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        
+        // إغلاق القائمة عند النقر على رابط
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+        
+        // تأثير التمرير السلس للروابط
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // تغيير لون الشريط العلوي عند التمرير
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+                header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.boxShadow = '0 2px 15px rgba(0,0,0,0.1)';
+            }
+        });
+        
+        // معالجة نموذج الاتصال
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('شكراً لتواصلكم معنا! سنرد عليكم في أقرب وقت.');
+            this.reset();
+        });
+        
+        // إضافة وإزالة الصنف النشط بناءً على التمرير
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 100)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
