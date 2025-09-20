@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>أدفانس فوتون سولار - حلول الطاقة الشمسية</title>
-        <meta property="twitter:image" content="https://github.com/mohammedalshibani/Advance-Photon-Solar/blob/main/logo.jpg">
+    <meta property="twitter:image" content="https://github.com/mohammedalshibani/Advance-Photon-Solar/blob/main/logo.jpg">
     <meta property="og:image" content="https://github.com/mohammedalshibani/Advance-Photon-Solar/blob/main/logo.jpg">
     <meta property="twitter:description" content="حلول متكاملة للطاقة الشمسية بخبرة هندسية ومواصفات عالية الجودة">
     <meta property="og:description" content="حلول متكاملة للطاقة الشمسية بخبرة هندسية ومواصفات عالية الجودة">
@@ -222,7 +222,7 @@
         
         /* من نحن */
         .about {
-            background-color: white;
+            background-color: #cbe1f7;
         }
         
         .about-content {
@@ -251,7 +251,7 @@
         
         /* لماذا الطاقة الشمسية */
         .why-solar {
-            background-color: #f1f8ff;
+            background-color: #cbe1f7;
         }
         
         .benefits {
@@ -285,6 +285,11 @@
         }
         
         /* الخدمات */
+
+        .services {
+            background-color: #e9f2fc;
+        }
+
         .services-cards {
             display: flex;
             flex-wrap: wrap;
@@ -316,54 +321,6 @@
             font-size: 2.5rem;
             color: var(--primary);
             margin-bottom: 15px;
-        }
-        
-        /* التواصل */
-        .contact {
-            background-color: #f1f8ff;
-        }
-        
-        .contact-content {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 40px;
-        }
-        
-        .contact-form {
-            flex: 1;
-            min-width: 300px;
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-        }
-        
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 16px;
-        }
-        
-        .poll-options {
-            margin: 15px 0;
-        }
-        
-        .poll-option {
-            margin-bottom: 10px;
         }
         
         /* الفوتر */
@@ -446,10 +403,6 @@
                 font-size: 2rem;
             }
             
-            .about-content, .contact-content {
-                flex-direction: column;
-            }
-            
             .logo h1 {
                 font-size: 20px;
             }
@@ -503,7 +456,6 @@
                     <li><a href="#about">من نحن</a></li>
                     <li><a href="#services">خدماتنا</a></li>
                     <li><a href="#why">لماذا الطاقة الشمسية</a></li>
-                    <li><a href="#contact">تواصل معنا</a></li>
                 </ul>
                 <div class="hamburger">
                     <i class="fas fa-bars"></i>
@@ -630,56 +582,6 @@
         </div>
     </section>
 
-    <!-- قسم التواصل -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <h2 class="section-title">تواصل معنا</h2>
-            <div class="contact-content">
-                <div class="contact-form">
-                    <h3>لديك سؤال عن الطاقة الشمسية؟ 💬</h3>
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <label for="name">الاسم</label>
-                            <input type="text" id="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">البريد الإلكتروني</label>
-                            <input type="email" id="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">رقم الهاتف</label>
-                            <input type="tel" id="phone">
-                        </div>
-                        <div class="form-group">
-                            <label for="message">رسالتك</label>
-                            <textarea id="message" rows="5" required></textarea>
-                        </div>
-                        
-                        <h3 style="margin-top: 30px;">#استطلاع_رأي</h3>
-                        <p>ما الذي يمنعك من تركيب نظام طاقة شمسية؟</p>
-                        
-                        <div class="poll-options">
-                            <div class="poll-option">
-                                <input type="radio" id="price" name="obstacle" value="السعر">
-                                <label for="price">السعر</label>
-                            </div>
-                            <div class="poll-option">
-                                <input type="radio" id="space" name="obstacle" value="المساحة">
-                                <label for="space">المساحة</label>
-                            </div>
-                            <div class="poll-option">
-                                <input type="radio" id="info" name="obstacle" value="المعلومات غير كافية">
-                                <label for="info">المعلومات غير كافية</label>
-                            </div>
-                        </div>
-                        
-                        <button type="submit" class="btn">إرسال الرسالة</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- الفوتر -->
     <footer>
         <div class="container">
@@ -693,7 +595,7 @@
                     <p><a href="#home">الرئيسية</a></p>
                     <p><a href="#about">من نحن</a></p>
                     <p><a href="#services">خدماتنا</a></p>
-                    <p><a href="#contact">تواصل معنا</a></p>
+                    <p><a href="#why">لماذا الطاقة الشمسية</a></p>
                 </div>
                 <div class="footer-section">
                     <h3>تابعنا على</h3>
@@ -757,13 +659,6 @@
             }
         });
         
-        // معالجة نموذج الاتصال
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('شكراً لتواصلكم معنا! سنرد عليكم في أقرب وقت.');
-            this.reset();
-        });
-        
         // إضافة وإزالة الصنف النشط بناءً على التمرير
         window.addEventListener('scroll', () => {
             let current = '';
@@ -784,6 +679,29 @@
                     link.classList.add('active');
                 }
             });
+        });
+
+        // تفعيل القسم النشط عند التحميل الأولي
+        document.addEventListener('DOMContentLoaded', function() {
+            // تحديد القسم النشط الأولي
+            const navLinks = document.querySelectorAll('.nav-links a');
+            if (window.location.hash) {
+                const currentSection = window.location.hash.substring(1);
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').substring(1) === currentSection) {
+                        link.classList.add('active');
+                    }
+                });
+            } else {
+                // إذا لم يكن هناك هاش، نفعّل قسم الرئيسية
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#home') {
+                        link.classList.add('active');
+                    }
+                });
+            }
         });
     </script>
 </body>
